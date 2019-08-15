@@ -18,7 +18,7 @@ y <- c(2,9,0)
 x + y
 x + 1
 
-##sum mean product on vector
+##sum mean product en vector
 
 sum(2,7,5)
 sum(x)
@@ -27,13 +27,14 @@ sum(x, na.rm = TRUE)
 mean(x, na.rm = TRUE)
 prod(x, na.rm = TRUE)
 
-# Construct a matrix with 5 rows that contain the numbers 1 up to 10 and byrow =  TRUE 
+## Matrices
+# Construir una matriz con 5 filas 
 matrix_a <-matrix(1:10, byrow = TRUE, nrow = 5)
 matrix_a
 dim(matrix_a)
 
 #Data Frames
-# Create a, b, c, d variables
+# Crear diferents variables
 a <- c(10,20,30,40)
 b <- c('book', 'pen', 'textbook', 'pencil_case')
 c <- c(TRUE,FALSE,TRUE,FALSE)
@@ -49,10 +50,9 @@ df[1,2]
 ## Select Rows 1 to 2
 df[1:2,]
 
-# Create a new vector
+# Agregar un nuevo vector al dataFrame
 quantity <- c(10, 35, 40, 5)
 
-# Add `quantity` to the `df` data frame
 df$quantity <- quantity
 df
 
