@@ -1,0 +1,12 @@
+# Visualizando datos en formato vector y raster en R
+
+## Visualización de datos espaciales en R: Vector vs. Raster (Paquete sf, raster, plot). 
+
+En *R* existe una variedad de paquetes que te puedn ayudar a vizualizar y tabajar con datos espaciales, en el presente capítulo analizaremos los paquetes *sf* para manejo de datos espaciales y *raster* para manejos raster, y su vizualización con la función *plot*.
+
+### Vector: paquete *SF*
+
+Es un paquete que se utiliza para manejar simples features, una forma estandarizada para utilizar datos/objetos del tipo vector, utiliza los estandares **GDAL** para lectura y escritura de datos, **GEOS** para realizar operaciones geométricas y **PROJ** para proyecciones y transformación de datos.
+
+###Instalación
+

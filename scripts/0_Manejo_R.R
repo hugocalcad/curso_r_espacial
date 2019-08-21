@@ -93,5 +93,19 @@ list.files(pattern = "Product")
 list.files (pattern = "csv$")
 
 #list files that start with the word "Product" followed by anything and ending with the word "xlsx":
-list.files(pattern = "^Product(.*)xlsx$")
+list.files
+
+# Manejo de Archivos utilizando el paquete here
+install.packages("here")
+library(here)
+
+# Establecer el directorio actual donde empezara a ejecutar here
+# crea un archivo .here que indica que aca se empiza a utilizar here
+set_here()
+
+# Ver la carrpeta donde se esta trabajando con here
+dr_here()
+
+# Ejemplos de utilización del archvio here
+here("recursos","shps","Departamentos_Bolivia.shp")
 

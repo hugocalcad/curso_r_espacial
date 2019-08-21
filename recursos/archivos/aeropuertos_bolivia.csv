@@ -1,0 +1,16 @@
+id,nombre,ciudad,pais,iata_faa,iaco,latitude,longitude,altitude,zone,dst
+1,Bermejo,Bermejo,Bolivia,BJO,SLBJ,-22.773336,-64.312881,1250,-3,U
+2,Jorge Wilsterman,Cochabamba,Bolivia,CBB,SLCB,-17.421058,-66.177114,8360,-4,U
+3,Chimore,Chapacura,Bolivia,,SLCH,-16.990019,-65.141533,1000,-4,U
+4,Heroes Del Acre,Cobija,Bolivia,CIJ,SLCO,-11.040436,-68.782972,892,-4,U
+5,El Alto Intl,La Paz,Bolivia,LPB,SLLP,-16.513339,-68.192256,13325,-4,U
+6,Juan Mendoza,Oruro,Bolivia,,SLOR,-17.962589,-67.076236,12146,-4,U
+7,Capitan Nicolas Rojas,Potosi,Bolivia,POI,SLPO,-19.543069,-65.723706,12913,-4,U
+8,Tte De Av Salvador Ogaya G,Puerto Suarez,Bolivia,PSZ,SLPS,-18.975281,-57.820586,439,-4,U
+9,Santa Ana Del Yacuma,Santa Ana,Bolivia,,SLSA,-13.762208,-65.435158,472,-4,U
+10,Juana Azurduy De Padilla,Sucre,Bolivia,SRE,SLSU,-19.007083,-65.288747,9527,-4,U
+11,Capitan Oriel Lea Plaza,Tarija,Bolivia,TJA,SLTJ,-21.555736,-64.701325,6084,-4,U
+12,Tte Av Jorge Henrich Arauz,Trinidad,Bolivia,TDD,SLTR,-14.818739,-64.918019,509,-4,U
+13,Tcnl Rafael Pabon,Villa Montes,Bolivia,,SLVM,-21.255231,-63.405611,1306,-4,U
+14,Viru Viru Intl,Santa Cruz,Bolivia,VVI,SLVR,-17.644756,-63.135364,1225,-4,U
+15,Yacuiba,Yacuiba,Bolivia,BYC,SLYA,-21.960925,-63.651669,2116,-3,U
