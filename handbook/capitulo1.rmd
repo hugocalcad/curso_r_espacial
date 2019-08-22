@@ -1,11 +1,10 @@
 # CAPÍTULO 1: Introducción al análisis espacial utilizando R
 
-## Instalación de R, y del R Studio
+## Instalación de R y RStudio
 
-**R**, también conocido como “GNU S”, es un entorno y un lenguaje para el cálculo estadístico y la generación de gráficos. R implementa un dialecto del premiado lenguaje S, desarrollado en los Laboratorios Bell por John Chambers et al
+**R**, también conocido como “GNU S”, es un entorno y un lenguaje para el analisis estadístico y la generación de gráficos. R es un lenguage derivado del programa S, desarrollado en los Laboratorios Bell por John Chambers et al. <!-- Inserta la referencia completa, usa bibtex y el paquete citr -->
 
-Para los no iniciados diremos que R provee un acceso relativamente sencillo a una amplia variedad de técnicas estadísticas y graficas.
-Para los usuarios avanzados se ofrece un lenguaje de programación completo con el que añadir nuevas técnicas mediante la definición de funciones. “S ha modificado para siempre la forma en la que las personas analizan, visualizan y manipulan los datos” (Association of Computer Machinery Software System Award 1998 a John Chambers).
+R provee un acceso relativamente sencillo a una amplia variedad de técnicas estadísticas y graficas. Adicionalmente, R constituye un lenguaje de programación completo con el que añadir nuevas técnicas mediante la definición de funciones. “S ha modificado para siempre la forma en la que las personas analizan, visualizan y manipulan los datos” (Association of Computer Machinery Software System Award 1998 a John Chambers).
 
 Actualmente, S y R son los dos lenguajes más utilizados en investigación en estadística. 
 
