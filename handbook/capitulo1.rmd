@@ -10,7 +10,7 @@ Actualmente, S y R son los dos lenguajes más utilizados en investigación en es
 
 Los grandes atractivos de R/S son: 
 
-- La capacidad de combinar, sin fisuras, análisis “preempaquetados” (ej., una regresión logística) con análisis ad-hoc, específicos para una situación: capacidad de manipular y modificar datos y funciones. 
+- La capacidad de combinar, análisis “preempaquetados” (ej., una regresión logística) con análisis ad-hoc, específicos para una situación: capacidad de manipular y modificar datos y funciones. 
 - Los gráficos de alta calidad: visualización de datos y producción de gráficos para papers.
 - La comunidad de R es muy dinámica, con gran crecimiento del número de paquetes, e integrada por estadísticos de gran renombre (ej., J. Chambers, L. Terney, B. Ripley, D. Bates, etc.). 
 - Hay extensiones específicas a nuevas ´áreas como bioinformática, geoestadística y modelos gráficos.
@@ -22,7 +22,7 @@ Depende del sistema operativo, pero todo se puede encontrar en:
 
   - [http://cran.es.r-project.org/bin](http://cran.es.r-project.org/bin)
 
-**Windows:** se puede obtener un ejecutable desde  [http://cran.es.r-project.org/bin/windows/base](http://cran.es.r-project.org/bin/windows/base) por ejemplo la versión de 32 bits [R-2.4.1-win32.exe](http://cran.es.r-project.org/bin/windows/base/R-2.4.1-win32.exe)
+**Windows:** se puede obtener un ejecutable desde  [http://cran.es.r-project.org/bin/windows/base](http://cran.es.r-project.org/bin/windows/base) por ejemplo la versión de 64 bits [R-3.6.1-win.exe](http://cran.es.r-project.org/bin/windows/base/R-3.6.1-win.exe).
 
 Al ejecutar el archivo se instalará el sistema base y los paquetes recomendados. 
 
@@ -32,7 +32,7 @@ a. Obtener el R-x.y.z.tar.gz y compilar desde las fuentes. También bajar los pa
 
 b. Obtener binarios (ej., \*.deb para Debian, \*.rpm para RedHat, SuSE, Mandrake)
 
-### RSTUDIO
+### RSstudio
 
 Es una poderosa herramienta de desarrollo integrado un ambiente de desarrollo integrado, donde se puede desarrollar los diferentes proyectos que se aborden utilizando el leguaje R.
 
