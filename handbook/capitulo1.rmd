@@ -2,7 +2,7 @@
 
 ## Instalación de R y RStudio
 
-**R**, también conocido como “GNU S”, es un entorno y un lenguaje para el analisis estadístico y la generación de gráficos. R es un lenguage derivado del programa S, desarrollado en los Laboratorios Bell por John Chambers et al. <!-- Inserta la referencia completa, usa bibtex y el paquete citr -->
+**R**, también conocido como “GNU S”, es un entorno y un lenguaje para el analisis estadístico y la generación de gráficos. R es un lenguage derivado del programa S, desarrollado en los Laboratorios Bell por John Chambers [@richard_a._becker_s_nodate].<!-- Insertado Todavia me falta afinar -->
 
 R provee un acceso relativamente sencillo a una amplia variedad de técnicas estadísticas y graficas. Adicionalmente, R constituye un lenguaje de programación completo con el que añadir nuevas técnicas mediante la definición de funciones. “S ha modificado para siempre la forma en la que las personas analizan, visualizan y manipulan los datos” (Association of Computer Machinery Software System Award 1998 a John Chambers).
 

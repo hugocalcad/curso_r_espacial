@@ -1,6 +1,8 @@
-md_files: 
+rmd_files: 
+    - "index.Rmd"
     - "capitulo1.Rmd"
-book_filename: "eha-ma-handbook"
+    - "capitulo2.Rmd"
+book_filename: "curso_r_espacial"
 repo: https://github.com/hugocalcad/curso_r_espacial/
 language:
   ui:

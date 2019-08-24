@@ -1,0 +1,16 @@
+---
+title: "Manual de R y Manejo Espacial"
+author: ["Victor","Chaly", "Miguel", "Juanca"]
+bibliography: [biblio.bib, packages.bib]
+documentclass: book
+github-repo: hugocalcad/curso_r_espacial
+link-citations: yes
+site: bookdown::bookdown_site
+biblio-style: apalike
+output:
+  bookdown::gitbook: default
+---
+
+# Manejo Espacial utilizando R 
+
+Curso realizado para manejar R con datos espaciales.....
