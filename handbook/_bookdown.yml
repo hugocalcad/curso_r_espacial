@@ -1,7 +1,7 @@
 rmd_files: 
     - "index.Rmd"
-    - "capitulo1.Rmd"
-    - "capitulo2.Rmd"
+    - "1_1_Introduccion.Rmd"
+    - "2_Visualizacion_vector_raster.Rmd"
 book_filename: "curso_r_espacial"
 repo: https://github.com/hugocalcad/curso_r_espacial/
 language:

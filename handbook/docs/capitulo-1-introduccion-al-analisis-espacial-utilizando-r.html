@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 CAPÍTULO 1: Introducción al análisis espacial utilizando R | Manual de R y Manejo Espacial</title>
   <meta name="description" content="2 CAPÍTULO 1: Introducción al análisis espacial utilizando R | Manual de R y Manejo Espacial" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 CAPÍTULO 1: Introducción al análisis espacial utilizando R | Manual de R y Manejo Espacial" />
   <meta property="og:type" content="book" />
@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="visualizando-datos-en-formato-vector-y-raster-en-r.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="visualizando-datos-en-formato-vector-y-raster-en-r.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -135,12 +135,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#introduccion-a-la-programacion"><i class="fa fa-check"></i><b>2.2</b> Introducción a la programación</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#hola-mundo"><i class="fa fa-check"></i><b>2.2.1</b> Hola Mundo</a></li>
 <li class="chapter" data-level="2.2.2" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#calculadora"><i class="fa fa-check"></i><b>2.2.2</b> Calculadora</a></li>
+<li class="chapter" data-level="2.2.3" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#manejo-de-archivos"><i class="fa fa-check"></i><b>2.2.3</b> Manejo de archivos</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html"><i class="fa fa-check"></i><b>3</b> Visualizando datos en formato vector y raster en R</a><ul>
 <li class="chapter" data-level="3.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#visualizacion-de-datos-espaciales-en-r-vector-vs.-raster-paquete-sf-raster-plot."><i class="fa fa-check"></i><b>3.1</b> Visualización de datos espaciales en R: Vector vs. Raster (Paquete sf, raster, plot).</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#vector-paquete-sf"><i class="fa fa-check"></i><b>3.1.1</b> Vector: paquete <em>sf</em></a></li>
-<li class="chapter" data-level="3.1.2" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#instalacion"><i class="fa fa-check"></i><b>3.1.2</b> Instalación</a></li>
+<li class="chapter" data-level="3.1.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#instalacion-de-paquetes"><i class="fa fa-check"></i><b>3.1.1</b> Instalacion de paquetes</a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#abrir-archivos-vectoriales-y-su-visualizacion"><i class="fa fa-check"></i><b>3.1.2</b> Abrir archivos vectoriales y su visualización</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -164,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> CAPÍTULO 1: Introducción al análisis espacial utilizando R</h1>
 <div id="instalacion-de-r-y-rstudio" class="section level2">
 <h2><span class="header-section-number">2.1</span> Instalación de R y RStudio</h2>
-<p><strong>R</strong>, también conocido como “GNU S”, es un entorno y un lenguaje para el analisis estadístico y la generación de gráficos. R es un lenguage derivado del programa S, desarrollado en los Laboratorios Bell por John Chambers <span class="citation">(Richard A. Becker, <a href="#ref-richard_a._becker_s_nodate">n.d.</a>)</span>.<!-- Insertado --></p>
+<p><strong>R</strong>, también conocido como “GNU S”, es un entorno y un lenguaje para el analisis estadístico y la generación de gráficos. R es un lenguage derivado del programa S, desarrollado en los Laboratorios Bell por John Chambers <span class="citation">(Richard A. Becker, <a href="#ref-richard_a._becker_s_nodate">n.d.</a>)</span>.<!-- Insertado Todavia me falta afinar --></p>
 <p>R provee un acceso relativamente sencillo a una amplia variedad de técnicas estadísticas y graficas. Adicionalmente, R constituye un lenguaje de programación completo con el que añadir nuevas técnicas mediante la definición de funciones. “S ha modificado para siempre la forma en la que las personas analizan, visualizan y manipulan los datos” (Association of Computer Machinery Software System Award 1998 a John Chambers).</p>
 <p>Actualmente, S y R son los dos lenguajes más utilizados en investigación en estadística.</p>
 <p>Los grandes atractivos de R/S son:</p>
@@ -229,8 +230,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="co">#utilizando la función seno</span></a>
 <a class="sourceLine" id="cb11-2" title="2"><span class="kw">sin</span>(<span class="dv">23</span>)</a></code></pre></div>
 <pre><code>## [1] -0.8462204</code></pre>
-<div id="trabajar-con-vectores" class="section level4">
-<h4><span class="header-section-number">2.2.2.1</span> Trabajar con vectores</h4>
+<div id="vectores" class="section level4">
+<h4><span class="header-section-number">2.2.2.1</span> Vectores</h4>
 <p>Uno de los elementon básicos con los que se trabaj en R son los vectores. Un <strong>vector</strong> es una secuencia de datos de algún elemento básico.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Números</span></a>
 <a class="sourceLine" id="cb13-2" title="2"><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a></code></pre></div>
@@ -238,9 +239,196 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="co">#lógicos</span></a>
 <a class="sourceLine" id="cb15-2" title="2"><span class="kw">c</span>(T,F,T,T,T)</a></code></pre></div>
 <pre><code>## [1]  TRUE FALSE  TRUE  TRUE  TRUE</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="co">#cadenas</span></a></code></pre></div>
-
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="co">#cadenas</span></a>
+<a class="sourceLine" id="cb17-2" title="2">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Hola&quot;</span>, <span class="st">&quot;Como&quot;</span>, <span class="st">&quot;estas&quot;</span>)</a></code></pre></div>
+<p>Para acceder a los datos se utiliza los corchetes <strong>[]</strong> con el número en la posición del vector</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">print</span>(v[<span class="dv">1</span>])</a></code></pre></div>
+<pre><code>## [1] &quot;Hola&quot;</code></pre>
 </div>
+<div id="matrices" class="section level4">
+<h4><span class="header-section-number">2.2.2.2</span> Matrices</h4>
+<p>Una <strong>Matriz</strong> es un arreglo bidimensional en R se utiliza la funcion <em>matrix()</em>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">m &lt;-<span class="st"> </span><span class="kw">matrix</span>(</a>
+<a class="sourceLine" id="cb20-2" title="2">  <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>), <span class="co">#Elementos de la matriz</span></a>
+<a class="sourceLine" id="cb20-3" title="3">  <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="co">#Número de filas</span></a>
+<a class="sourceLine" id="cb20-4" title="4">  <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="co">#Número de columnas</span></a>
+<a class="sourceLine" id="cb20-5" title="5">  <span class="dt">byrow =</span> T <span class="co">#Llenar por filas</span></a>
+<a class="sourceLine" id="cb20-6" title="6">)</a>
+<a class="sourceLine" id="cb20-7" title="7"><span class="kw">print</span>(m)</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9</code></pre>
+<p>Al igual que en los vectores se puede acceder las mismos utilizando los corchetes <em>[row,col]</em> colocando primero la posición de la fila seguido de la posición de columna.</p>
+<p>Tanto en vectores como en matrices es posible realizar operaciones entre ellos es decir suma, producto, producto escalar y otros tanto con vectores y matrices.</p>
+<p>####Listas</p>
+<p>Las listas son vectores(arreglos) genéricos que puede contener cualquier tipo de elemento, y para crear un elemento tipo lista utilizamos la funcion <em>list()</em>.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1">n =<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>) </a>
+<a class="sourceLine" id="cb22-2" title="2">s =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;aa&quot;</span>, <span class="st">&quot;bb&quot;</span>, <span class="st">&quot;cc&quot;</span>, <span class="st">&quot;dd&quot;</span>, <span class="st">&quot;ee&quot;</span>) </a>
+<a class="sourceLine" id="cb22-3" title="3">b =<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>) </a>
+<a class="sourceLine" id="cb22-4" title="4">x =<span class="st"> </span><span class="kw">list</span>(n, s, b, <span class="dv">3</span>)   <span class="co"># x contains copies of n, s, b</span></a></code></pre></div>
+<p>Al igual que en los vectores para acceder a los elementos, se utiliza los corchetes <em>[]</em> y te retorna el elemento de la posición.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">print</span>(x[<span class="dv">1</span>])</a></code></pre></div>
+<pre><code>## [[1]]
+## [1] 2 3 5</code></pre>
+</div>
+<div id="data-frames" class="section level4">
+<h4><span class="header-section-number">2.2.2.3</span> Data Frames</h4>
+<p>Son los elementos masutilizados al momento de realizar operaciones en el trabajo con R, un <strong>Data Frame</strong> es una tabla donde cada columna es representada por un vector, basicamnete seria una lista de vectores de igual tamaño. Para definir un <strong>Data Frame</strong> utilizamos la función <em>data.frame()</em>.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"> n &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>) </a>
+<a class="sourceLine" id="cb25-2" title="2"> s =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;aa&quot;</span>, <span class="st">&quot;bb&quot;</span>, <span class="st">&quot;cc&quot;</span>) </a>
+<a class="sourceLine" id="cb25-3" title="3"> b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>) </a>
+<a class="sourceLine" id="cb25-4" title="4"> df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(n, s, b)</a>
+<a class="sourceLine" id="cb25-5" title="5"> <span class="kw">print</span>(df)</a></code></pre></div>
+<pre><code>##   n  s     b
+## 1 2 aa  TRUE
+## 2 3 bb FALSE
+## 3 5 cc  TRUE</code></pre>
+<p>Al igual que en las listas se puede acceder a cada vector y elemento utilizando los corchetes y de diferentes formas.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="co">#Accedemos al primera columna y no los devuelve con un sub data frame</span></a>
+<a class="sourceLine" id="cb27-2" title="2">df[<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>##   n
+## 1 2
+## 2 3
+## 3 5</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="co">#Accedemos ala primera columna pero nos devuelve un vector</span></a>
+<a class="sourceLine" id="cb29-2" title="2">df[[<span class="dv">1</span>]]</a></code></pre></div>
+<pre><code>## [1] 2 3 5</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="co">#Accedemos al elemento en la columna 2 de la fila 1</span></a>
+<a class="sourceLine" id="cb31-2" title="2">df[<span class="dv">1</span>,<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] aa
+## Levels: aa bb cc</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="co">#Accedemos a la primera fila con todos los elementos de cada vector como un data frame</span></a>
+<a class="sourceLine" id="cb33-2" title="2">df[<span class="dv">1</span>,]</a></code></pre></div>
+<pre><code>##   n  s    b
+## 1 2 aa TRUE</code></pre>
+<p>Otro aspecto importante de los data frame son los nombres de las columnas y para poder ver y asignar se utliza la función <em>names()</em>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="co">#Ver nombres de las columnas</span></a>
+<a class="sourceLine" id="cb35-2" title="2"><span class="kw">names</span>(df)</a></code></pre></div>
+<pre><code>## [1] &quot;n&quot; &quot;s&quot; &quot;b&quot;</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="co">#Asignar nuevos nombres</span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="kw">names</span>(df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;col1&quot;</span>,<span class="st">&quot;col2&quot;</span>, <span class="st">&quot;col3&quot;</span>)</a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="co">#Ver columna 1</span></a>
+<a class="sourceLine" id="cb37-4" title="4">df<span class="op">$</span>col1</a></code></pre></div>
+<pre><code>## [1] 2 3 5</code></pre>
+<p>Para agregar una columna al data frame se utiliza el comodin $ despues del data frame.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1">df<span class="op">$</span>col4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">12.3</span>, <span class="fl">15.8</span>, <span class="fl">9.5</span>)</a>
+<a class="sourceLine" id="cb39-2" title="2">df</a></code></pre></div>
+<pre><code>##   col1 col2  col3 col4
+## 1    2   aa  TRUE 12.3
+## 2    3   bb FALSE 15.8
+## 3    5   cc  TRUE  9.5</code></pre>
+<p>Para seleccionar de un conjunto de datos del daa frame se utiliza la función <em>subset()</em> donde se coloca como primer argumento el data frame original y como segundo argumento es un operador lógico con la condición que debe cumplir para la selección.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1">df2 &lt;-<span class="st"> </span><span class="kw">subset</span>(df, <span class="dt">subset =</span> col3 <span class="op">==</span><span class="st"> </span>T)</a>
+<a class="sourceLine" id="cb41-2" title="2">df2</a></code></pre></div>
+<pre><code>##   col1 col2 col3 col4
+## 1    2   aa TRUE 12.3
+## 3    5   cc TRUE  9.5</code></pre>
+<p>Para ver mas ejemplos de tipos de datos puedes ver <a href="http://www.r-tutor.com/r-introduction">http://www.r-tutor.com/r-introduction</a></p>
+</div>
+<div id="lectura-de-archivos" class="section level4">
+<h4><span class="header-section-number">2.2.2.4</span> Lectura de archivos</h4>
+<p>Existen varios métodos para cargar diferentes tipos de archivos como ser: excel <em>.xls .xlsx</em> archivo separado por comas <em>.csv</em>, incluso archivos de matlab u otros paquetes estadísticos.</p>
+<p>Para el curso veremos apertura de archivos en formato <em>.xls</em> para este proposito utilizaremos el paquete <em>readxl</em>.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">install.packages</span>(<span class="st">&#39;readxl&#39;</span>)</a></code></pre></div>
+<pre><code>## Installing package into &#39;C:/Users/Huguito/Documents/R/win-library/3.5&#39;
+## (as &#39;lib&#39; is unspecified)</code></pre>
+<pre><code>## package &#39;readxl&#39; successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Huguito\AppData\Local\Temp\RtmpiWgpC7\downloaded_packages</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">library</span>(readxl)</a></code></pre></div>
+<pre><code>## Warning: package &#39;readxl&#39; was built under R version 3.5.3</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="co">#apuntamos al archivos de ejemplo</span></a>
+<a class="sourceLine" id="cb48-2" title="2">file_xls &lt;-<span class="st"> </span><span class="kw">readxl_example</span>(<span class="st">&#39;clippy.xls&#39;</span>)</a>
+<a class="sourceLine" id="cb48-3" title="3">df &lt;-<span class="st"> </span><span class="kw">read_xls</span>(file_xls)</a>
+<a class="sourceLine" id="cb48-4" title="4">df</a></code></pre></div>
+<pre><code>## # A tibble: 4 x 2
+##   name                 value              
+##   &lt;chr&gt;                &lt;chr&gt;              
+## 1 Name                 Clippy             
+## 2 Species              paperclip          
+## 3 Approx date of death 39083              
+## 4 Weight in grams      0.90000000000000002</code></pre>
+</div>
+</div>
+<div id="manejo-de-archivos" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Manejo de archivos</h3>
+<p>Cuando trabajamos con varios archivos es mejor trabajar con distintas funciones que nos devuelvan un listado de los mismos y podamos trabajar en bloque y asi automatizar los procesos.</p>
+<p>Una manera de trabajar es utilizando la funcion <em>list.files()</em>, aca también es bueno conocer llo que son las expresiones regulares, aca utilizaremos solo la expresion <em>.ext$</em> donde <em>ext</em> es la extensión de los archivosque listaremos.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="co">##Listar archivos en el directorio de trabajo</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="kw">list.files</span>()</a></code></pre></div>
+<pre><code>##  [1] &quot;_bookdown.yml&quot;                    
+##  [2] &quot;1_1_Introduccion.rmd&quot;             
+##  [3] &quot;2_Visualizacion_vector_raster.rmd&quot;
+##  [4] &quot;assets&quot;                           
+##  [5] &quot;biblio.bib&quot;                       
+##  [6] &quot;curso_r_espacial.Rmd&quot;             
+##  [7] &quot;docs&quot;                             
+##  [8] &quot;index.rmd&quot;                        
+##  [9] &quot;packages.bib&quot;                     
+## [10] &quot;style.css&quot;</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="co">#Sintaxis utilizando algún carpetadentro nuestro ordenador</span></a>
+<a class="sourceLine" id="cb52-2" title="2"><span class="co">#list.files (path = &quot;C:/Folder/Subfolder1/Subfolder2&quot;)</span></a>
+<a class="sourceLine" id="cb52-3" title="3"></a>
+<a class="sourceLine" id="cb52-4" title="4"><span class="co">#list files in a browsed folder</span></a>
+<a class="sourceLine" id="cb52-5" title="5"><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">choose.dir</span>())</a></code></pre></div>
+<pre><code>## character(0)</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="co">#listar todos los archivos incluso en subcarpetas recursivamente</span></a>
+<a class="sourceLine" id="cb54-2" title="2"><span class="kw">list.files</span>(<span class="dt">recursive =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;_bookdown.yml&quot;                                                      
+##  [2] &quot;1_1_Introduccion.rmd&quot;                                               
+##  [3] &quot;2_Visualizacion_vector_raster.rmd&quot;                                  
+##  [4] &quot;assets/1_rstudio_ambiente.png&quot;                                      
+##  [5] &quot;biblio.bib&quot;                                                         
+##  [6] &quot;curso_r_espacial.Rmd&quot;                                               
+##  [7] &quot;docs/assets/1_rstudio_ambiente.png&quot;                                 
+##  [8] &quot;docs/capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html&quot;
+##  [9] &quot;docs/index.html&quot;                                                    
+## [10] &quot;docs/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf&quot;    
+## [11] &quot;docs/libs/gitbook-2.6.7/css/plugin-bookdown.css&quot;                    
+## [12] &quot;docs/libs/gitbook-2.6.7/css/plugin-fontsettings.css&quot;                
+## [13] &quot;docs/libs/gitbook-2.6.7/css/plugin-highlight.css&quot;                   
+## [14] &quot;docs/libs/gitbook-2.6.7/css/plugin-search.css&quot;                      
+## [15] &quot;docs/libs/gitbook-2.6.7/css/plugin-table.css&quot;                       
+## [16] &quot;docs/libs/gitbook-2.6.7/css/style.css&quot;                              
+## [17] &quot;docs/libs/gitbook-2.6.7/js/app.min.js&quot;                              
+## [18] &quot;docs/libs/gitbook-2.6.7/js/jquery.highlight.js&quot;                     
+## [19] &quot;docs/libs/gitbook-2.6.7/js/lunr.js&quot;                                 
+## [20] &quot;docs/libs/gitbook-2.6.7/js/plugin-bookdown.js&quot;                      
+## [21] &quot;docs/libs/gitbook-2.6.7/js/plugin-fontsettings.js&quot;                  
+## [22] &quot;docs/libs/gitbook-2.6.7/js/plugin-search.js&quot;                        
+## [23] &quot;docs/libs/gitbook-2.6.7/js/plugin-sharing.js&quot;                       
+## [24] &quot;docs/libs/jquery-2.2.3/jquery.min.js&quot;                               
+## [25] &quot;docs/search_index.json&quot;                                             
+## [26] &quot;docs/visualizando-datos-en-formato-vector-y-raster-en-r.html&quot;       
+## [27] &quot;index.rmd&quot;                                                          
+## [28] &quot;packages.bib&quot;                                                       
+## [29] &quot;style.css&quot;</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="co">#Listar con la ruta completa (path and file name) de cada archivo</span></a>
+<a class="sourceLine" id="cb56-2" title="2"><span class="kw">list.files</span>(<span class="dt">full.name =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;./_bookdown.yml&quot;                    
+##  [2] &quot;./1_1_Introduccion.rmd&quot;             
+##  [3] &quot;./2_Visualizacion_vector_raster.rmd&quot;
+##  [4] &quot;./assets&quot;                           
+##  [5] &quot;./biblio.bib&quot;                       
+##  [6] &quot;./curso_r_espacial.Rmd&quot;             
+##  [7] &quot;./docs&quot;                             
+##  [8] &quot;./index.rmd&quot;                        
+##  [9] &quot;./packages.bib&quot;                     
+## [10] &quot;./style.css&quot;</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="co">#Listar archivos que contengan la palabra &quot;Product&quot;</span></a>
+<a class="sourceLine" id="cb58-2" title="2"><span class="kw">list.files</span>(<span class="dt">pattern =</span> <span class="st">&quot;Product&quot;</span>)</a></code></pre></div>
+<pre><code>## character(0)</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="co">#Listar archivos con la extension csv (Aca sepuede colocar .shp, .tif)</span></a>
+<a class="sourceLine" id="cb60-2" title="2"><span class="kw">list.files</span> (<span class="dt">pattern =</span> <span class="st">&quot;.csv$&quot;</span>)</a></code></pre></div>
+<pre><code>## character(0)</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="co">#listar archivos con extension  shp en nuestra carpeta de trabajo</span></a>
+<a class="sourceLine" id="cb62-2" title="2"><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;../recursos/shps&quot;</span>,<span class="dt">pattern =</span> <span class="st">&quot;.shp$&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;aeropuertos_bolivia.shp&quot;   &quot;Departamentos_Bolivia.shp&quot;
+## [3] &quot;DUCTOS.shp&quot;                &quot;POBLACIONES.shp&quot;</code></pre>
+<p>Los siguientes enlaces se encuentra información de expresiones regulares <a href="http://rpubs.com/ydmarinb/429756">http://rpubs.com/ydmarinb/429756</a>, y sobre manejo de archivos <a href="https://rpubs.com/daniballari/intro_espaciotrabajo_archivos">https://rpubs.com/daniballari/intro_espaciotrabajo_archivos</a>.</p>
+
 </div>
 </div>
 </div>

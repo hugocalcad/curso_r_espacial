@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Visualizando datos en formato vector y raster en R | Manual de R y Manejo Espacial</title>
   <meta name="description" content="3 Visualizando datos en formato vector y raster en R | Manual de R y Manejo Espacial" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Visualizando datos en formato vector y raster en R | Manual de R y Manejo Espacial" />
   <meta property="og:type" content="book" />
@@ -33,7 +33,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html">
+<link rel="prev" href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,12 +135,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#introduccion-a-la-programacion"><i class="fa fa-check"></i><b>2.2</b> Introducción a la programación</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#hola-mundo"><i class="fa fa-check"></i><b>2.2.1</b> Hola Mundo</a></li>
 <li class="chapter" data-level="2.2.2" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#calculadora"><i class="fa fa-check"></i><b>2.2.2</b> Calculadora</a></li>
+<li class="chapter" data-level="2.2.3" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#manejo-de-archivos"><i class="fa fa-check"></i><b>2.2.3</b> Manejo de archivos</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html"><i class="fa fa-check"></i><b>3</b> Visualizando datos en formato vector y raster en R</a><ul>
 <li class="chapter" data-level="3.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#visualizacion-de-datos-espaciales-en-r-vector-vs.-raster-paquete-sf-raster-plot."><i class="fa fa-check"></i><b>3.1</b> Visualización de datos espaciales en R: Vector vs. Raster (Paquete sf, raster, plot).</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#vector-paquete-sf"><i class="fa fa-check"></i><b>3.1.1</b> Vector: paquete <em>sf</em></a></li>
-<li class="chapter" data-level="3.1.2" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#instalacion"><i class="fa fa-check"></i><b>3.1.2</b> Instalación</a></li>
+<li class="chapter" data-level="3.1.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#instalacion-de-paquetes"><i class="fa fa-check"></i><b>3.1.1</b> Instalacion de paquetes</a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#abrir-archivos-vectoriales-y-su-visualizacion"><i class="fa fa-check"></i><b>3.1.2</b> Abrir archivos vectoriales y su visualización</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -164,13 +165,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">3</span> Visualizando datos en formato vector y raster en R</h1>
 <div id="visualizacion-de-datos-espaciales-en-r-vector-vs.-raster-paquete-sf-raster-plot." class="section level2">
 <h2><span class="header-section-number">3.1</span> Visualización de datos espaciales en R: Vector vs. Raster (Paquete sf, raster, plot).</h2>
-<p>En <em>R</em> existe una variedad de paquetes que te puedn ayudar a vizualizar y tabajar con datos espaciales, en el presente capítulo analizaremos los paquetes <em>sf</em> para manejo de datos espaciales y <em>raster</em> para manejos raster, y su vizualización con la función <em>plot</em>.</p>
-<div id="vector-paquete-sf" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Vector: paquete <em>sf</em></h3>
-<p>Es un paquete que se utiliza para manejar simples features, una forma estandarizada para utilizar datos/objetos del tipo vector, utiliza los estandares <strong>GDAL</strong> para lectura y escritura de datos, <strong>GEOS</strong> para realizar operaciones geométricas y <strong>PROJ</strong> para proyecciones y transformación de datos.</p>
+<p>En <em>R</em> existe una variedad de paquetes que te puedn ayudar a vizualizar y tabajar con datos espaciales, en el presente capítulo analizaremos los paquetes <em>sf</em> para manejo de datos espaciales y <em>raster</em> para manejos raster, y su vizualización básica con la función <em>plot</em>.</p>
+<div id="instalacion-de-paquetes" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Instalacion de paquetes</h3>
+<p>Los paquetes <em>sf</em> y <em>raster</em> se encuentra en el repositorio oficial de R: el paquete <strong>sf</strong> que se utiliza para manejar simples features, una forma estandarizada para utilizar datos/objetos del tipo vector, utiliza los estandares <strong>GDAL</strong> para lectura y escritura de datos, <strong>GEOS</strong> geométricas y <strong>PROJ</strong> para proyecciones y transformación de datos; el paquete <strong>raster</strong> permite la lectura, esccritura admás de poder realizar análisi y modelados en datos cuadriculaos (imágenes raster).</p>
+<p>Para instalación de paquete oficiales o que se encuentren dentro del repositorio oficial se utiliza la función <em>install.packages()</em>.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1"><span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(<span class="st">&quot;sf&quot;</span>))</a>
+<a class="sourceLine" id="cb64-2" title="2">  <span class="kw">install.packages</span>(<span class="st">&#39;sf&#39;</span>)</a>
+<a class="sourceLine" id="cb64-3" title="3"><span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(<span class="st">&#39;raster&#39;</span>))</a>
+<a class="sourceLine" id="cb64-4" title="4">  <span class="kw">install.packages</span>(<span class="st">&#39;raster&#39;</span>)</a></code></pre></div>
 </div>
-<div id="instalacion" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> Instalación</h3>
+<div id="abrir-archivos-vectoriales-y-su-visualizacion" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Abrir archivos vectoriales y su visualización</h3>
+<p>Los archivos vectoriales uno de los mas utilizados son los archivos en formato <em>.shp</em>, que son archivos de ESRI, los modelos vectoriales almacenan 3 tipos de fromas geemétricas que son: punto, linea y poligono. En R existen diversas formas de abrir este tipo archivos, se puede utilizar otros paquetes como ser <strong>rgdal</strong> o <strong>sp</strong>.</p>
+<p>En el paquete <strong>sf</strong> la funcion <em>st_read()</em> permite la lectura de este tipos de archivos solo hay que colocar la ruta de nuestro archivo.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1"><span class="co">#listamos los archivos con extension .shp</span></a>
+<a class="sourceLine" id="cb65-2" title="2">shape_files &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="st">&#39;../recursos/shps&#39;</span>, <span class="dt">full.names =</span> T, <span class="dt">pattern =</span> <span class="st">&#39;.shp$&#39;</span>)</a>
+<a class="sourceLine" id="cb65-3" title="3">shape_files</a></code></pre></div>
+<pre><code>## [1] &quot;../recursos/shps/aeropuertos_bolivia.shp&quot;  
+## [2] &quot;../recursos/shps/Departamentos_Bolivia.shp&quot;
+## [3] &quot;../recursos/shps/DUCTOS.shp&quot;               
+## [4] &quot;../recursos/shps/POBLACIONES.shp&quot;</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="co">#abrimos el primer elemento que son los departamentos de Bolivia</span></a>
+<a class="sourceLine" id="cb67-2" title="2">sf_dep &lt;-<span class="st"> </span><span class="kw">st_read</span>(shape_files[<span class="dv">2</span>], <span class="dt">stringsAsFactors =</span> F)</a></code></pre></div>
+<pre><code>## Reading layer `Departamentos_Bolivia&#39; from data source `D:\VC2019\TRABAJO\UMSA\geografia\curso\curso_r_espacial\recursos\shps\Departamentos_Bolivia.shp&#39; using driver `ESRI Shapefile&#39;
+## Simple feature collection with 14 features and 6 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: -69.64483 ymin: -22.90657 xmax: -57.45443 ymax: -9.669633
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
+<p>Se carga un objeto que contiene información geográfica como ser: el tipo de vector, la extension geográfica y en que proyeccion esta. Además se carga todos los datos adjuntos y se crea una columna llamadad <em>geometry</em> donde esta cargado la geometria que es donde esta ubicada espacialmente.</p>
+<p>Para visualizar utilizaremos la función <em>plot</em> que es la que esta por defecto en el R.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1"><span class="kw">plot</span>(sf_dep)</a></code></pre></div>
+<p><img src="curso_r_espacial_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 
 <div id="refs" class="references">
 <div>
