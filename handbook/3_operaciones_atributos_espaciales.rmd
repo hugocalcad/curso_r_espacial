@@ -90,9 +90,9 @@ Pero muchas veces necestamos extraer datos de ciertos punto o sectores por ejemp
 ```{r}
 #Utilizando la capa con las 3 bandas y la capa de poblaciones extrraemos 
 rasValue <- extract(ras_S, sf_pob)
-#verificamos los datos con head y tile
+#verificamos los datos con head y tail
 head(rasValue)
-tile(rasValue)
+tail(rasValue)
 ```
 
 Como se observa los datos aparecen con valores *NA* esto es debido a que nuestro raster ocupa solo el espacio de santa cruz y las poblaciones de toda bolivia podemos utilizar un filtro para dejar de lado los valores *NA*
@@ -104,5 +104,5 @@ rasValue <- as.data.frame(rasValue)
 rasValue %>% filter(!is.na(rasValue$Santa_Cruz_2.1))
 #Revisamos los datos
 head(rasValue)
-tile(rasValue)
+tail(rasValue)
 ```

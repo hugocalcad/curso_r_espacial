@@ -184,7 +184,8 @@ Existen varios métodos para cargar diferentes tipos de archivos como ser: excel
 Para el curso veremos apertura de archivos en formato *.xls* para este proposito utilizaremos el paquete *readxl*.
 
 ```{r}
-install.packages('readxl')
+if(!require(readxl))
+  install.packages('readxl')
 library(readxl)
 #apuntamos al archivos de ejemplo
 file_xls <- readxl_example('clippy.xls')
