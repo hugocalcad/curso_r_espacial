@@ -11,6 +11,6 @@ output:
   bookdown::gitbook: default
 ---
 
-# Manejo Espacial utilizando R 
+# Manejo Espacial utilizando R ({#introduction .unnumbered})
 
 Curso realizado para manejar R con datos espaciales.....
