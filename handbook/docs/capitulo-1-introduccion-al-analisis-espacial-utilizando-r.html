@@ -49,6 +49,14 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
 
 
 <style type="text/css">
@@ -126,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Manejo Espacial utilizando R</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Manejo Espacial utilizando R ({#introduction .unnumbered})</a></li>
 <li class="chapter" data-level="2" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><i class="fa fa-check"></i><b>2</b> CAPÍTULO 1: Introducción al análisis espacial utilizando R</a><ul>
 <li class="chapter" data-level="2.1" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#instalacion-de-r-y-rstudio"><i class="fa fa-check"></i><b>2.1</b> Instalación de R y RStudio</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html"><a href="capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html#obtencion-e-instalacion-de-r-rstudio"><i class="fa fa-check"></i><b>2.1.1</b> Obtención e instalación de R / Rstudio</a></li>
@@ -139,9 +147,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html"><i class="fa fa-check"></i><b>3</b> Visualizando datos en formato vector y raster en R</a><ul>
-<li class="chapter" data-level="3.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#visualizacion-de-datos-espaciales-en-r-vector-vs.-raster-paquete-sf-raster-plot."><i class="fa fa-check"></i><b>3.1</b> Visualización de datos espaciales en R: Vector vs. Raster (Paquete sf, raster, plot).</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#instalacion-de-paquetes"><i class="fa fa-check"></i><b>3.1.1</b> Instalacion de paquetes</a></li>
-<li class="chapter" data-level="3.1.2" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#abrir-archivos-vectoriales-y-su-visualizacion"><i class="fa fa-check"></i><b>3.1.2</b> Abrir archivos vectoriales y su visualización</a></li>
+<li class="chapter" data-level="3.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#instalacion-de-paquetes"><i class="fa fa-check"></i><b>3.1</b> Instalación de paquetes</a></li>
+<li class="chapter" data-level="3.2" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#cargar-archivos-vectoriales-y-su-visualizacion"><i class="fa fa-check"></i><b>3.2</b> Cargar archivos vectoriales y su visualización</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#cargar-un-archivo-de-texto-con-coordenadas"><i class="fa fa-check"></i><b>3.2.1</b> Cargar un archivo de texto con coordenadas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#cargando-imagenes-raster"><i class="fa fa-check"></i><b>3.3</b> Cargando imagenes Raster</a></li>
+<li class="chapter" data-level="3.4" data-path="visualizando-datos-en-formato-vector-y-raster-en-r.html"><a href="visualizando-datos-en-formato-vector-y-raster-en-r.html#introduccion-a-visualizacion-dinamica-con-leaflet"><i class="fa fa-check"></i><b>3.4</b> Introducción a visualizacion dinámica con leaflet</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="operaciones-con-atributos-espaciales-en-r.html"><a href="operaciones-con-atributos-espaciales-en-r.html"><i class="fa fa-check"></i><b>4</b> Operaciones con atributos espaciales en R</a><ul>
+<li class="chapter" data-level="4.1" data-path="operaciones-con-atributos-espaciales-en-r.html"><a href="operaciones-con-atributos-espaciales-en-r.html#datos-vector"><i class="fa fa-check"></i><b>4.1</b> Datos Vector</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="operaciones-con-atributos-espaciales-en-r.html"><a href="operaciones-con-atributos-espaciales-en-r.html#utilizando-la-funcion-subset"><i class="fa fa-check"></i><b>4.1.1</b> Utilizando la funcion <em>subset</em></a></li>
+<li class="chapter" data-level="4.1.2" data-path="operaciones-con-atributos-espaciales-en-r.html"><a href="operaciones-con-atributos-espaciales-en-r.html#utilizando-los-corchetes"><i class="fa fa-check"></i><b>4.1.2</b> Utilizando los corchetes</a></li>
+<li class="chapter" data-level="4.1.3" data-path="operaciones-con-atributos-espaciales-en-r.html"><a href="operaciones-con-atributos-espaciales-en-r.html#utilizando-el-paquete-dplyr"><i class="fa fa-check"></i><b>4.1.3</b> Utilizando el paquete <em>dplyr</em></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -330,19 +347,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">2.2.2.4</span> Lectura de archivos</h4>
 <p>Existen varios métodos para cargar diferentes tipos de archivos como ser: excel <em>.xls .xlsx</em> archivo separado por comas <em>.csv</em>, incluso archivos de matlab u otros paquetes estadísticos.</p>
 <p>Para el curso veremos apertura de archivos en formato <em>.xls</em> para este proposito utilizaremos el paquete <em>readxl</em>.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">install.packages</span>(<span class="st">&#39;readxl&#39;</span>)</a></code></pre></div>
-<pre><code>## Installing package into &#39;C:/Users/Huguito/Documents/R/win-library/3.5&#39;
-## (as &#39;lib&#39; is unspecified)</code></pre>
-<pre><code>## package &#39;readxl&#39; successfully unpacked and MD5 sums checked
-## 
-## The downloaded binary packages are in
-##  C:\Users\Huguito\AppData\Local\Temp\RtmpiWgpC7\downloaded_packages</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">library</span>(readxl)</a></code></pre></div>
-<pre><code>## Warning: package &#39;readxl&#39; was built under R version 3.5.3</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="co">#apuntamos al archivos de ejemplo</span></a>
-<a class="sourceLine" id="cb48-2" title="2">file_xls &lt;-<span class="st"> </span><span class="kw">readxl_example</span>(<span class="st">&#39;clippy.xls&#39;</span>)</a>
-<a class="sourceLine" id="cb48-3" title="3">df &lt;-<span class="st"> </span><span class="kw">read_xls</span>(file_xls)</a>
-<a class="sourceLine" id="cb48-4" title="4">df</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(readxl))</a>
+<a class="sourceLine" id="cb43-2" title="2">  <span class="kw">install.packages</span>(<span class="st">&#39;readxl&#39;</span>)</a>
+<a class="sourceLine" id="cb43-3" title="3"><span class="kw">library</span>(readxl)</a>
+<a class="sourceLine" id="cb43-4" title="4"><span class="co">#apuntamos al archivos de ejemplo</span></a>
+<a class="sourceLine" id="cb43-5" title="5">file_xls &lt;-<span class="st"> </span><span class="kw">readxl_example</span>(<span class="st">&#39;clippy.xls&#39;</span>)</a>
+<a class="sourceLine" id="cb43-6" title="6">df &lt;-<span class="st"> </span><span class="kw">read_xls</span>(file_xls)</a>
+<a class="sourceLine" id="cb43-7" title="7">df</a></code></pre></div>
 <pre><code>## # A tibble: 4 x 2
 ##   name                 value              
 ##   &lt;chr&gt;                &lt;chr&gt;              
@@ -356,75 +367,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.2.3</span> Manejo de archivos</h3>
 <p>Cuando trabajamos con varios archivos es mejor trabajar con distintas funciones que nos devuelvan un listado de los mismos y podamos trabajar en bloque y asi automatizar los procesos.</p>
 <p>Una manera de trabajar es utilizando la funcion <em>list.files()</em>, aca también es bueno conocer llo que son las expresiones regulares, aca utilizaremos solo la expresion <em>.ext$</em> donde <em>ext</em> es la extensión de los archivosque listaremos.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="co">##Listar archivos en el directorio de trabajo</span></a>
-<a class="sourceLine" id="cb50-2" title="2"><span class="kw">list.files</span>()</a></code></pre></div>
-<pre><code>##  [1] &quot;_bookdown.yml&quot;                    
-##  [2] &quot;1_1_Introduccion.rmd&quot;             
-##  [3] &quot;2_Visualizacion_vector_raster.rmd&quot;
-##  [4] &quot;assets&quot;                           
-##  [5] &quot;biblio.bib&quot;                       
-##  [6] &quot;curso_r_espacial.Rmd&quot;             
-##  [7] &quot;docs&quot;                             
-##  [8] &quot;index.rmd&quot;                        
-##  [9] &quot;packages.bib&quot;                     
-## [10] &quot;style.css&quot;</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="co">#Sintaxis utilizando algún carpetadentro nuestro ordenador</span></a>
-<a class="sourceLine" id="cb52-2" title="2"><span class="co">#list.files (path = &quot;C:/Folder/Subfolder1/Subfolder2&quot;)</span></a>
-<a class="sourceLine" id="cb52-3" title="3"></a>
-<a class="sourceLine" id="cb52-4" title="4"><span class="co">#list files in a browsed folder</span></a>
-<a class="sourceLine" id="cb52-5" title="5"><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">choose.dir</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="co">##Listar archivos en el directorio de trabajo</span></a>
+<a class="sourceLine" id="cb45-2" title="2"><span class="kw">list.files</span>()</a></code></pre></div>
+<pre><code>##  [1] &quot;_bookdown.yml&quot;                         
+##  [2] &quot;1_1_Introduccion.rmd&quot;                  
+##  [3] &quot;2_Visualizacion_vector_raster.rmd&quot;     
+##  [4] &quot;3_operaciones_atributos_espaciales.rmd&quot;
+##  [5] &quot;assets&quot;                                
+##  [6] &quot;biblio.bib&quot;                            
+##  [7] &quot;curso_r_espacial.Rmd&quot;                  
+##  [8] &quot;docs&quot;                                  
+##  [9] &quot;index.rmd&quot;                             
+## [10] &quot;packages.bib&quot;                          
+## [11] &quot;style.css&quot;</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="co">#Sintaxis utilizando algún carpetadentro nuestro ordenador</span></a>
+<a class="sourceLine" id="cb47-2" title="2"><span class="co">#list.files (path = &quot;C:/Folder/Subfolder1/Subfolder2&quot;)</span></a>
+<a class="sourceLine" id="cb47-3" title="3"></a>
+<a class="sourceLine" id="cb47-4" title="4"><span class="co">#list files in a browsed folder</span></a>
+<a class="sourceLine" id="cb47-5" title="5"><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">choose.dir</span>())</a></code></pre></div>
 <pre><code>## character(0)</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="co">#listar todos los archivos incluso en subcarpetas recursivamente</span></a>
-<a class="sourceLine" id="cb54-2" title="2"><span class="kw">list.files</span>(<span class="dt">recursive =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="co">#listar todos los archivos incluso en subcarpetas recursivamente</span></a>
+<a class="sourceLine" id="cb49-2" title="2"><span class="kw">list.files</span>(<span class="dt">recursive =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>##  [1] &quot;_bookdown.yml&quot;                                                      
 ##  [2] &quot;1_1_Introduccion.rmd&quot;                                               
 ##  [3] &quot;2_Visualizacion_vector_raster.rmd&quot;                                  
-##  [4] &quot;assets/1_rstudio_ambiente.png&quot;                                      
-##  [5] &quot;biblio.bib&quot;                                                         
-##  [6] &quot;curso_r_espacial.Rmd&quot;                                               
-##  [7] &quot;docs/assets/1_rstudio_ambiente.png&quot;                                 
-##  [8] &quot;docs/capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html&quot;
-##  [9] &quot;docs/index.html&quot;                                                    
-## [10] &quot;docs/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf&quot;    
-## [11] &quot;docs/libs/gitbook-2.6.7/css/plugin-bookdown.css&quot;                    
-## [12] &quot;docs/libs/gitbook-2.6.7/css/plugin-fontsettings.css&quot;                
-## [13] &quot;docs/libs/gitbook-2.6.7/css/plugin-highlight.css&quot;                   
-## [14] &quot;docs/libs/gitbook-2.6.7/css/plugin-search.css&quot;                      
-## [15] &quot;docs/libs/gitbook-2.6.7/css/plugin-table.css&quot;                       
-## [16] &quot;docs/libs/gitbook-2.6.7/css/style.css&quot;                              
-## [17] &quot;docs/libs/gitbook-2.6.7/js/app.min.js&quot;                              
-## [18] &quot;docs/libs/gitbook-2.6.7/js/jquery.highlight.js&quot;                     
-## [19] &quot;docs/libs/gitbook-2.6.7/js/lunr.js&quot;                                 
-## [20] &quot;docs/libs/gitbook-2.6.7/js/plugin-bookdown.js&quot;                      
-## [21] &quot;docs/libs/gitbook-2.6.7/js/plugin-fontsettings.js&quot;                  
-## [22] &quot;docs/libs/gitbook-2.6.7/js/plugin-search.js&quot;                        
-## [23] &quot;docs/libs/gitbook-2.6.7/js/plugin-sharing.js&quot;                       
-## [24] &quot;docs/libs/jquery-2.2.3/jquery.min.js&quot;                               
-## [25] &quot;docs/search_index.json&quot;                                             
-## [26] &quot;docs/visualizando-datos-en-formato-vector-y-raster-en-r.html&quot;       
-## [27] &quot;index.rmd&quot;                                                          
-## [28] &quot;packages.bib&quot;                                                       
-## [29] &quot;style.css&quot;</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="co">#Listar con la ruta completa (path and file name) de cada archivo</span></a>
-<a class="sourceLine" id="cb56-2" title="2"><span class="kw">list.files</span>(<span class="dt">full.name =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<pre><code>##  [1] &quot;./_bookdown.yml&quot;                    
-##  [2] &quot;./1_1_Introduccion.rmd&quot;             
-##  [3] &quot;./2_Visualizacion_vector_raster.rmd&quot;
-##  [4] &quot;./assets&quot;                           
-##  [5] &quot;./biblio.bib&quot;                       
-##  [6] &quot;./curso_r_espacial.Rmd&quot;             
-##  [7] &quot;./docs&quot;                             
-##  [8] &quot;./index.rmd&quot;                        
-##  [9] &quot;./packages.bib&quot;                     
-## [10] &quot;./style.css&quot;</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="co">#Listar archivos que contengan la palabra &quot;Product&quot;</span></a>
-<a class="sourceLine" id="cb58-2" title="2"><span class="kw">list.files</span>(<span class="dt">pattern =</span> <span class="st">&quot;Product&quot;</span>)</a></code></pre></div>
+##  [4] &quot;3_operaciones_atributos_espaciales.rmd&quot;                             
+##  [5] &quot;assets/1_rstudio_ambiente.png&quot;                                      
+##  [6] &quot;biblio.bib&quot;                                                         
+##  [7] &quot;curso_r_espacial.Rmd&quot;                                               
+##  [8] &quot;docs/assets/1_rstudio_ambiente.png&quot;                                 
+##  [9] &quot;docs/capitulo-1-introduccion-al-analisis-espacial-utilizando-r.html&quot;
+## [10] &quot;docs/curso_r_espacial_files/figure-html/unnamed-chunk-25-1.png&quot;     
+## [11] &quot;docs/index.html&quot;                                                    
+## [12] &quot;docs/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf&quot;    
+## [13] &quot;docs/libs/gitbook-2.6.7/css/plugin-bookdown.css&quot;                    
+## [14] &quot;docs/libs/gitbook-2.6.7/css/plugin-fontsettings.css&quot;                
+## [15] &quot;docs/libs/gitbook-2.6.7/css/plugin-highlight.css&quot;                   
+## [16] &quot;docs/libs/gitbook-2.6.7/css/plugin-search.css&quot;                      
+## [17] &quot;docs/libs/gitbook-2.6.7/css/plugin-table.css&quot;                       
+## [18] &quot;docs/libs/gitbook-2.6.7/css/style.css&quot;                              
+## [19] &quot;docs/libs/gitbook-2.6.7/js/app.min.js&quot;                              
+## [20] &quot;docs/libs/gitbook-2.6.7/js/jquery.highlight.js&quot;                     
+## [21] &quot;docs/libs/gitbook-2.6.7/js/lunr.js&quot;                                 
+## [22] &quot;docs/libs/gitbook-2.6.7/js/plugin-bookdown.js&quot;                      
+## [23] &quot;docs/libs/gitbook-2.6.7/js/plugin-fontsettings.js&quot;                  
+## [24] &quot;docs/libs/gitbook-2.6.7/js/plugin-search.js&quot;                        
+## [25] &quot;docs/libs/gitbook-2.6.7/js/plugin-sharing.js&quot;                       
+## [26] &quot;docs/libs/jquery-2.2.3/jquery.min.js&quot;                               
+## [27] &quot;docs/search_index.json&quot;                                             
+## [28] &quot;docs/visualizando-datos-en-formato-vector-y-raster-en-r.html&quot;       
+## [29] &quot;index.rmd&quot;                                                          
+## [30] &quot;packages.bib&quot;                                                       
+## [31] &quot;style.css&quot;</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="co">#Listar con la ruta completa (path and file name) de cada archivo</span></a>
+<a class="sourceLine" id="cb51-2" title="2"><span class="kw">list.files</span>(<span class="dt">full.name =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;./_bookdown.yml&quot;                         
+##  [2] &quot;./1_1_Introduccion.rmd&quot;                  
+##  [3] &quot;./2_Visualizacion_vector_raster.rmd&quot;     
+##  [4] &quot;./3_operaciones_atributos_espaciales.rmd&quot;
+##  [5] &quot;./assets&quot;                                
+##  [6] &quot;./biblio.bib&quot;                            
+##  [7] &quot;./curso_r_espacial.Rmd&quot;                  
+##  [8] &quot;./docs&quot;                                  
+##  [9] &quot;./index.rmd&quot;                             
+## [10] &quot;./packages.bib&quot;                          
+## [11] &quot;./style.css&quot;</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1"><span class="co">#Listar archivos que contengan la palabra &quot;Product&quot;</span></a>
+<a class="sourceLine" id="cb53-2" title="2"><span class="kw">list.files</span>(<span class="dt">pattern =</span> <span class="st">&quot;Product&quot;</span>)</a></code></pre></div>
 <pre><code>## character(0)</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="co">#Listar archivos con la extension csv (Aca sepuede colocar .shp, .tif)</span></a>
-<a class="sourceLine" id="cb60-2" title="2"><span class="kw">list.files</span> (<span class="dt">pattern =</span> <span class="st">&quot;.csv$&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1"><span class="co">#Listar archivos con la extension csv (Aca sepuede colocar .shp, .tif)</span></a>
+<a class="sourceLine" id="cb55-2" title="2"><span class="kw">list.files</span> (<span class="dt">pattern =</span> <span class="st">&quot;.csv$&quot;</span>)</a></code></pre></div>
 <pre><code>## character(0)</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="co">#listar archivos con extension  shp en nuestra carpeta de trabajo</span></a>
-<a class="sourceLine" id="cb62-2" title="2"><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;../recursos/shps&quot;</span>,<span class="dt">pattern =</span> <span class="st">&quot;.shp$&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1"><span class="co">#listar archivos con extension  shp en nuestra carpeta de trabajo</span></a>
+<a class="sourceLine" id="cb57-2" title="2"><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;../recursos/shps&quot;</span>,<span class="dt">pattern =</span> <span class="st">&quot;.shp$&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;aeropuertos_bolivia.shp&quot;   &quot;Departamentos_Bolivia.shp&quot;
 ## [3] &quot;DUCTOS.shp&quot;                &quot;POBLACIONES.shp&quot;</code></pre>
 <p>Los siguientes enlaces se encuentra información de expresiones regulares <a href="http://rpubs.com/ydmarinb/429756">http://rpubs.com/ydmarinb/429756</a>, y sobre manejo de archivos <a href="https://rpubs.com/daniballari/intro_espaciotrabajo_archivos">https://rpubs.com/daniballari/intro_espaciotrabajo_archivos</a>.</p>
