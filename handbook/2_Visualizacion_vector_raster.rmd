@@ -1,0 +1,149 @@
+# Visualizando datos en formato vector y raster en R
+
+En *R* existe una variedad de paquetes que te puedn ayudar a vizualizar y tabajar con datos espaciales, en el presente capítulo analizaremos los paquetes *sf* para manejo de datos espaciales y *raster* para manejos raster, y su vizualización básica con la función *plot*.
+
+## Instalación de paquetes
+
+Los paquetes *sf* y *raster* se encuentra en el repositorio oficial de R: el paquete **sf** que se utiliza para manejar simples features, una forma estandarizada para utilizar datos/objetos del tipo vector, utiliza los estandares **GDAL** para lectura y escritura de datos, **GEOS** geométricas y **PROJ** para proyecciones y transformación de datos; el paquete **raster** permite la lectura, esccritura admás de poder realizar análisi y modelados en datos cuadriculaos (imágenes raster).  
+
+Para instalación de paquete oficiales o que se encuentren dentro del repositorio oficial se utiliza la función *install.packages()*.
+
+```{r eval=FALSE}
+if(!require("sf"))
+  install.packages('sf')
+if(!require('raster'))
+  install.packages('raster')
+```
+
+## Cargar archivos vectoriales y su visualización
+
+Los archivos vectoriales uno de los mas utilizados son los archivos en formato *.shp*, que son archivos de ESRI, los modelos vectoriales almacenan 3 tipos de fromas geemétricas que son: punto, linea y poligono. En R existen diversas formas de abrir este tipo archivos, se puede utilizar otros paquetes como ser **rgdal** o **sp**.
+
+En el paquete **sf** la funcion *st_read()* permite la lectura de este tipos de archivos solo hay que colocar la ruta de nuestro archivo.
+
+```{r}
+#listar los archivos con extension .shp
+shape_files <- list.files('../recursos/shps', full.names = T, pattern = '.shp$')
+shape_files
+#Cargar el primer elemento que son los departamentos de Bolivia (Poligono)
+sf_dep <- st_read(shape_files[2], stringsAsFactors = F)
+#Cargar el segundo elemento que son los ductos de petroleo (lineas)
+sf_duc <- st_read(shape_files[3], stringsAsFactors = F)
+#Cargar el ercer elemento que son las poblaciones (puntos)
+sf_pob <- st_read(shape_files[4], stringsAsFactors = F)
+```
+
+Se carga un objeto que contiene información geográfica como ser: el tipo de vector, la extension geográfica y en que proyeccion esta. Además se carga todos los datos adjuntos y se crea una columna llamadad *geometry* donde esta cargado la geometria que es donde esta ubicada espacialmente.
+
+### Cargar un archivo de texto con coordenadas
+
+Cuando tenemos un archivo que contiene las coordenadas recogidas en algun trabajo en R se utiliza la funcion *st_as_sf()*, aca se debe definir un objeto que contenga las coordenadas (debe contener la longitud y latitud), para cargar nuestros datos como un *data frame* se utiliza la función *read_csv()* del paquete base de R.
+
+```{r}
+#Leer los datos de nuestro archivo csv
+bol_aeropuertos <- read.csv("../recursos/archivos/aeropuertos_bolivia.csv", 
+                            stringsAsFactors = FALSE)
+#Ver la información que contiene
+head(bol_aeropuertos)
+#Lo volvemos en un feature con la funcion st_as_sf con las columnas que definen la longitud y latitud
+sf_aer <- st_as_sf(bol_aeropuertos, coords = c("longitude", "latitude"), crs=4326)
+```
+
+###Visualizacion
+
+Para visualizar utilizaremos la función *plot* que es la que esta por defecto en el R.
+
+```{r}
+plot(sf_dep)
+```
+
+Con R facilmente podemos crear un mapa con la clasificación de un atributo de nuestro feature, para esto utilizamos los corchetes con el nombre del atributo.
+
+```{r}
+#Vemos un resumen del feature
+summary(sf_dep)
+#Seleccionas la columna en este caso NOM_DEP
+plot(sf_dep['NOM_DEP'])
+```
+
+Exite varios parametros que nos pueden ser de utilidad para presentar mapas en R a continuacion detallamos algunos:
+
+-**col:** permite definir la paleta de colores puede definirse por un número o colocar una paleta predefinida por el paquete principal como ser:  rainbow, heat.colors, topo.colors, bpy.colors.
+-**axes** binario, por *TRUE* muestra los ejes.
+-**add** binario, por *TRUE* permite añadir un feature al mapa.
+
+Existen más parametros que pueden ser visualizados en al ayuda de R para esto se puede usar *?plot* y seleccionar la función *plot* del paquete sf.
+
+Para añadir mas features en un solo mapa utilizaremos la funcion *st_geometry* dentro de *plot* para que nos muestre solo los objetos espaciales y no los discrimine por sus atributos.
+
+```{r}
+plot(st_geometry(sf_dep), col = sf.colors(9, categorical = TRUE), border = 'grey', 
+     axes = TRUE)
+plot(st_geometry(sf_duc), add = T)
+plot(st_geometry(sf_aer), pch = 3, col = "red", add = T)
+```
+
+## Cargando imagenes Raster
+
+Las imagenes **raster** vienen en varias tipo de formatos como ser *.tif, .grd, .NFS* y mchos otros. Para cargar un archivo utilizamos la funcion *raster()*, enviandole laruta donde se encuentra nuestra imagen raster, existen otros parametros como ser *band* que banda utilizaremos, *layer* que capa se cargara.
+
+```{r}
+# Listar todos nuestros archivos raster con extension tif
+raster_files <- list.files('../recursos/raster', full.names = T, 
+                           recursive = T, pattern = '.tif$')
+#Cargar la imagen a nuestro espacio de trabajo
+ras_1 <- raster(raster_files[1])
+#Ver el objeto cargado
+ras_1
+```
+
+Las imagenes raster son matrices que contienen celdas con valores númericos, podemos acceder a cualquier valor de nuestra imagen con los corchetes *[filas, columna]* indicando la posición en la matriz.
+
+```{r}
+#Mostrar la primera celda
+ras_1[1,1]
+#Acceder al ultimo valor
+ras_1[ras_1@nrows,ras_1@ncols]
+```
+
+###Visualización de imagenes raster
+
+Para visualizar nuestro objetos raster utilizamos la función *plot*.
+
+```{r}
+plot(ras_1)
+```
+
+Como se obserav nos muestra los resultados de la imagen en una escala de verde a rojo, muchas imagenes de satelite constan de 3 bandas por ejemplo la imagen que utilizamos se ve asi:
+
+![Image](../recursos/raster/santa_cruz_3.tif)
+
+La función que utilizamos carga la primera banda, si queremos cargar todas nuestras bandas podemos utilizar cargarla una por una y luego unirla en pila de rasters utilizando la funcion *stack()*
+
+```{r}
+#cargar las demás bandas
+ras_2 <-raster(raster_files[1], band = 2)
+ras_3 <-raster(raster_files[1], band = 3)
+#Crear el stack
+ras_S <- stack(ras_1,ras_2,ras_3)
+#Visuzaliando la imagen multibanda en formato RGB
+plotRGB(ras_S)
+```
+
+## Introducción a visualizacion dinámica con leaflet
+
+Leaflet es una de las librerias mas popularespara realizar mpaas interactivos, R ofrece un paquete que permite visualizar nuestro mapas de manera dinamica con leaflet aca solo se muestra un ejemple si quiere saber mas puede ver [https://rstudio.github.io/leaflet/](https://rstudio.github.io/leaflet/).
+
+```{r}
+#Instalacion
+if(!require(leaflet))
+  install.packages('leaflet')
+library(leaflet)
+
+map <- leaflet(sf_dep) %>%
+  addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
+              opacity = 0.5, fillOpacity = 0.5,
+              highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                  bringToFront = TRUE))
+map %>% addTiles()
+```
