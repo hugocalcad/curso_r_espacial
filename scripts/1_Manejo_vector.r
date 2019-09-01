@@ -5,9 +5,9 @@ if()
 library(sf)
 library(sp)
 
-shape_files <- list.files('../recursos/shps', full.names = T, pattern = '.shp$')
+shape_files <- list.files('recursos/shps', full.names = T, pattern = '.shp$')
 
-sf_dep <- st_read(shape_files[2])
+sf_dep <- st_read(shape_files[1])
 
 plot(sf_dep)
 
@@ -43,34 +43,4 @@ st_write(sf_aer, here("recursos", "shps", "aeropuertos_bolivia.shp"))
 plot(st_geometry(sf_dep), col = sf.colors(9, categorical = TRUE), border = 'grey', 
      axes = TRUE)
 plot(st_geometry(sf_duc), add = T)
-plot(st_geometry(sf_aer), pch = 1, col = "red", add = T)
-
-raster_files <- list.files('../recursos/raster', full.names = T, 
-                           recursive = T, pattern = '.tif$')
-
-ras_1 <- raster(raster_files[1], band=1)
-ras_2 <- raster(raster_files[1], band=2)
-ras_3 <- raster(raster_files[1], band=3)
-
-
-plot(st_geometry(sf_dep), col = sf.colors(9, categorical = TRUE), border = 'grey', 
-     axes = TRUE)
-plot(ras_1, add = TRUE)
-ras_1
-plot(ras_1)
-plot(st_geometry(sf_duc), col = "red", add = T)
-ras_1
-
-install.packages('leaflet')
-library(leaflet)
-library(sf)
-leaflet() %>% addTiles()
-leaflet(sf_dep) %>%addTiles()
-plot(sf_dep)
-
-map <- leaflet(sf_dep) %>%
-  addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
-              opacity = 0.5, fillOpacity = 0.5,
-              highlightOptions = highlightOptions(color = "white", weight = 2,
-                                                  bringToFront = TRUE))
-map %>% addTiles()
+plot(st_geometry(sf_aer), pch = 3, col = "red", add = T)
