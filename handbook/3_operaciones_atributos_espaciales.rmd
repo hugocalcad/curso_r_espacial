@@ -101,7 +101,7 @@ Como se observa los datos aparecen con valores *NA* esto es debido a que nuestro
 #Lo convertimos en un data frame
 rasValue <- as.data.frame(rasValue)
 #Realisamos el filtro solo de la primera banda ya que se repetira en las demas
-rasValue %>% filter(!is.na(rasValue$Santa_Cruz_2.1))
+rasValues <- rasValue %>% filter(!is.na(rasValue$Santa_Cruz_2.1))
 #Revisamos los datos
 head(rasValue)
 tail(rasValue)
