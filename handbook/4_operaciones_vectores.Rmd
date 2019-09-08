@@ -1,3 +1,123 @@
 # Operaciones espaciales complejas con datos Vectoriales
 
+## Spatial Joind con SF
+
+Una de las operaciones geoespaciales más comunes son las uniones (**spatial joins**), que esta basado en componentes de la topologia espacial. Un ejemplo que atributos de puntos estan asociados sobre ciertos poligonos.
+
+Librerias a utilizar:
+
+```{r}
+library(here)
+library(sf)
+library(dplyr)
+library(GSODR)
+```
+
+
+## Cargar los Polígonos
+
+
+Utilizaremos los archivos ya utilizados nuestro shape de departamentos
+
+```{r}
+#Abrir el shapefile del departamento y filtrar solo lo departamentos
+sf_departamentos <- st_read(here('recursos','shps','Departamentos_Bolivia.shp')) %>%
+  filter(DESCRIP == 'Departamento')
+
+#Selecionar el departamento de Santa Cruz
+sf_sc_dep <- sf_departamentos[sf_departamentos$NOM_DEP == 'SANTA CRUZ',]
+
+#Abrir la capa de municipios de Bolivia y filtralos de Santa Cruz
+sf_sc_mun <- st_read(here('recursos','shps','municipio_geo.shp')) %>%
+  filter(DEPARTAMEN == 'Santa Cruz')
+
+#HAcer una rectangulo que ocupe Santa Cruz
+sc_box <- st_make_grid(sf_sc_dep, n = 1)
+
+#plots
+plot(sf_departamentos$geometry)
+plot(sf_sc_dep$geometry, add=T, col="gray50", border="maroon")
+plot(sf_sc_mun$geometry, add=T, border="pink", col=NA)
+plot(sc_box, add=T, border="red3", col=NA, lwd=2)
+```
+
+##Puntos
+
+Vamos a agregar algunos puntos de datos climáticos del paquete GSODR, el cual es un paquete en R que contiene un resumen de datos meteorológicos, uncluyendo datos de estaciones climáticas. 
+
+```{r}
+# Abri los metadatos de las estaciones climaticas de GSODR 
+load(system.file("extdata", "isd_history.rda", package = "GSODR"))
+
+# Convertir a shape en format sf
+isd_history <- as.data.frame(isd_history) %>% 
+  st_as_sf(coords=c("LON","LAT"), crs=4326, remove=FALSE)  
+
+#Hacer un recorte para cubrir el area de Beni y Santa Cruz
+b = sapply(st_intersects(isd_history, sf_sc_dep),function(x){length(x)==0})
+isd_history_sc <- isd_history[!b,]
+```
+
+HAcemos un mapa con las estaciones en Santa Cruz
+
+```{r}
+#Ver los puntos de las estaciones solamente en el departamento de Santa Cruz
+plot(isd_history_sc$geometry, cex=0.5)
+plot(sf_sc_dep$geometry, col="gray", alpha= 0.5, border="#440154FF", lwd=1.5, add=TRUE)
+plot(isd_history_sc$geometry, add=T, pch=21, bg="#21908CFF", cex=0.7, col="black")
+title("Estaciones climáticas GSOD en Santa Cruz")
+```
+
+## Join espaciales
+
+Primero seleccionaremos todos los poligonos de municipios donde estan ubicados las estaciones.
+
+```{r}
+# En las atributos shapefiles 
+sf_sc_mun_isd_poli <- sf_sc_mun[isd_history,] 
+#ploteamos los municipios 
+plot(sf_sc_mun_isd_poli$geometry, col='green', alpha=0.3)
+```
+
+## Anti-Join 
+
+Ahora podemos ver que municipios tienen al menos una estación climática, pero que tal si quisieramos saber que municipios no cuentan con una estación podemos usar el conepto `anti_join` que precisamente hace eso buscar los elementos que no tienen coincidencia. PAra esto se utilizará los subsetting especificamente con los brackets [ ], acompa;ado de la función **`!lengths()`**.
+
+```{r}
+# Encontrar los puntos que no coinciden
+sf_sc_mun_poly_anti <- isd_history_sc[!lengths(st_intersects(isd_history_sc, sf_sc_mun)), ]
+# Encontrar los municipio 
+sf_sc_mun_poly_anti2 <- sf_sc_mun[!lengths(st_intersects(sf_sc_mun, isd_history_sc)), ]
+# Plot it!
+plot(sf_sc_mun$geometry, col="pink",alpha = 0.3)
+plot(sf_sc_mun_poly_anti$geometry, pch=15, add=T, col="maroon")
+plot(sf_sc_mun_poly_anti2$geometry, add=T, col="darkgreen")
+title("Anti-joins with CA GSOD Climate Stations:
+Points outside of county boundaries (squares),
+      Counties with no stations (green)")
+```
+
+## Join en Atributos: POINTS dentro de POLYGONS
+
+Observando las capas de Municipios de Santa Cruz y las estaciones tenemo:
+
+```{r}
+#Municipios
+head(sf_sc_mun)
+#isd_history_sc
+head(isd_history_sc)
+```
+
+Agregaremos el campo **MUNICIPIO** a nuestra capa de puntos de estaciones climáticas.
+
+Para hacer esta union espacialmente utilizaremos la función `st_join`, si utilizamos la variable `left = TRUE` hara que todos los puntos permanescan colocando `NULL` en aquellos que no caiga dentro nuestro poligonos, es como realizara un **left join**, si colocamos `left = FALSE` solo permaneceran los puntos que se encuentren dentro los poligonos.
+
+```{r}
+# Utilizar el join pero como inner join .... left = FALSE
+isd_sc_mun_pts <- st_join(isd_history, left = TRUE, sf_sc_mun["MUNICIPIO"]) # join points
+
+# plot
+plot(isd_sc_mun_pts$geometry, pch=21, cex=0.7, col="purple", bg="gray80")
+plot(sf_sc_mun$geometry, border="gray20", col=NA, add=T)
+```
 
